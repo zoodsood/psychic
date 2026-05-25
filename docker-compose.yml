@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  service:
+    image: ghcr.io/YOUR_GITHUB_USERNAME/your-repo-name:latest
+    container_name: app_runner
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - AUTH_KEY=your_64_char_hex_key_here
+      - DEPLOY_IDS='["your_deployment_id"]'
+      - SS_PASS=your_shadowsocks_password
+      # Optional:
+      # - GOOGLE_HOST=216.239.38.120
